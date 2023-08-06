@@ -76,7 +76,7 @@ if ((a_2 * c_2) < 0 && (a_2 * d_2) < 0) {
 //問題3
 var ans3 = 0;
 var y_3 = 0;
-while (ans3 == y_3 || ans3 == 0 || y_3 == 0) {
+while (ans3 == y_3 || Math.abs(ans3) < 2 || y_3 == 0) {
 	var ans3 = Math.floor(Math.random() * 11)-5;
 	var y_3 = Math.floor(Math.random() * 11)-5;
 }
@@ -102,7 +102,7 @@ const q3 = a_3+"<span class='literal'>x</span>"+b_3+"<span class='literal'>y</sp
 //問題4
 var x_4 = 0;
 var ans4 = 0;
-while (x_4 == ans4 || x_4 == 0 || ans4 == 0) {
+while (x_4 == ans4 || x_4 == 0 || Math.abs(ans4) < 2) {
 	var x_4 = Math.floor(Math.random() * 11)-5;
 	var ans4 = Math.floor(Math.random() * 11)-5;
 }
@@ -122,7 +122,7 @@ const e_4 = a_4 * x_4 + b_4 * ans4;
 const f_4 = c_4 * x_4 + d_4 * ans4;
 
 //問題文の作成4
-const q4 = a_4+"<span class='literal'>x</span>"+b_4+"<span class='literal'>y</span>="+e_4+"<br>"+c_4+"<span class='literal'>x</span>+"+d_4+"<span class='literal'>y</span>="+f_4+"　<br><span class='literal'>y</span>に当てはまる数を答えなさい";
+const q4 = a_4+"<span class='literal'>x</span>"+b_4+"<span class='literal'>y</span>="+e_4+"　<br>"+c_4+"<span class='literal'>x</span>+"+d_4+"<span class='literal'>y</span>="+f_4+"　<br><span class='literal'>y</span>に当てはまる数を答えなさい";
 
 
 //問題5
