@@ -17,7 +17,9 @@ function watch() {
 q_time = setInterval (watch, 1000);
 
 //問題1
-while (x_1 == y_1) {
+var x_1 = 0;
+var y_1 = 0;
+while (x_1 == y_1 || x_1 == 0 || y_1 == 0) {
 	var x_1 = Math.floor(Math.random() * 19) -9;
 	var y_1 = Math.floor(Math.random() * 19) -9;
 }
@@ -118,110 +120,77 @@ const e_4 = a_4 * x_4 + b_4 * ans4;
 const f_4 = c_4 * x_4 + d_4 * ans4;
 
 //問題文の作成4
-const q4 = a_4+"<span class='literal'>x</span>"+b_4+"<span class='literal'>y</span>="+e_4+"<br>"+c_4+"<span class='literal'>x</span>+"+d_4+"<span class='literal'>y</span>="+f_4+"<br><span class='literal'>y</span>に当てはまる数を答えなさい";
+const q4 = a_4+"<span class='literal'>x</span>"+b_4+"<span class='literal'>y</span>="+e_4+"<br>"+c_4+"<span class='literal'>x</span>+"+d_4+"<span class='literal'>y</span>="+f_4+"　<br><span class='literal'>y</span>に当てはまる数を答えなさい";
 
 
 //問題5
-var ans5 = 0;
-var x_5 = 0;
-while (x_5 == ans5 || x_5 == 0 || ans5 == 0) {
-	var x_5 = Math.floor(Math.random() * 11)-5;
-	var ans5 = Math.floor(Math.random() * 11)-5;
-}
+var x_5 = Math.floor(Math.random() * 19) -9;
 
-//問題文の作成5
-if (a_5 < 0) {
-	q5 = "("+a_5+")<sup>2</sup>=?";
-} else {
-	q5 = a_5+"<sup>2</sup>=?";
+while (a_5 == b_5) {
+	var a_5 = Math.floor(Math.random() * 19) -9;
+	var b_5 = Math.floor(Math.random() * 19) -9;
 }
 
 //問題5の答え
-const ans5 = a_5**2;
+var ans5 = a_5 * x_5 + b_5;
+
+//問題文の作成5
+if (b_5 < 0) {
+	q5 = "<span class='literal'>y</span>="+a_5+"<span class='literal'>x</span>"+b_5+", <br><span class='literal'>x</span>+<span class='literal'>y</span>="+ (x_5+ans5)+"　<br><span class='literal'>y</span>に当てはまる数を答えなさい";
+} else {
+	q5 = "<span class='literal'>y</span>="+a_5+"<span class='literal'>x</span>+"+b_5+", <br><span class='literal'>x</span>+<span class='literal'>y</span>="+ (x_5+ans5)+"　<br><span class='literal'>y</span>に当てはまる数を答えなさい";
+}
 
 
 //問題6
 var a_6 = 0;
 var b_6 = 0;
-while(Math.abs(a_6) == Math.abs(b_6) || Math.abs(a_6) < 2 || Math.abs(b_6) < 2) {
+while(Math.abs(a_6) == Math.abs(b_6) || Math.abs(a_6) < 2 || b_6 ==0) {
 	//異なる二数
 	var a_6 = Math.floor(Math.random() * 21)-10;
 	var b_6 = Math.floor(Math.random() * 21)-10;
 }
 
+var x_6 = Math.floor(Math.random() * 21)-10;
+var y_6 = a_6 * x_6 + b_6;
+
 //問題文の作成6
-var c_6 = Math.random() * 3;
-if (c_6 < 1) {
-	c_6 = "+"; //加法
-	if (b_6 > 0) {
-		q6 = a_6+"<span class='literal'>x</span>"+c_6+b_6+"<span class='literal'>x</span>=?"; //ax+bx=?
-	} else {
-		q6 = a_6+"<span class='literal'>x</span>"+c_6+"("+b_6+"<span class='literal'>x</span>)=?"; //a+(-B)=?
-	}
-} else if (c_6 < 2) {
-	c_6 = "-"; //減法
-	if (b_6 > 0) {
-		q6 = a_6+"<span class='literal'>a</span>"+c_6+b_6+"<span class='literal'>a</span>=?"; //ax-bx=?
-	} else {
-		q6 = a_6+"<span class='literal'>a</span>"+c_6+"("+b_6+"<span class='literal'>a</span>)=?"; //a-(-B)=?
-	}
-} else {
-	c_6 = "×"; //乗法
-	if (b_6 > 0) {
-		q6 = a_6+c_6+b_6+"<span class='literal'>a</span>=?"; //a*b=?
-	} else {
-		q6 = a_6+c_6+"("+b_6+"<span class='literal'>a</span>)=?"; //a*(-B)=?
-	}
-}
+var q6 = "変化の割合が"+a_6+"で、<br><span class='literal'>x</span>="+x_6+"の時に<span class='literal'>y</span>="+y_6+"<br>である一次関数の式を求めよ";
 
 //問題6の答え
-if (c_6 == "+") {
-	if (a_6+b_6 == 1) {
-		ans6 = "x";
-	} else if (a_6+b_6 == -1) {
-		ans6 = "-x";
-	} else {
-		ans6 = (a_6+b_6)+"x";
-	}
-
-} else if (c_6 == "-") {
-	if (a_6-b_6 == 1) {
-		ans6 = "a";
-	} else if (a_6-b_6 == -1) {
-		ans6 = "-a";
-	} else {
-		ans6 = (a_6-b_6)+"a";
-	}
+if (b_6 < 0) {
+	ans6 = "y="+a_6+"x"+b_6;
 } else {
-	ans6 = (a_6*b_6)+"a";
+	ans6 = "y="+a_6+"x+"+b_6;
 }
 
 
 //問題7
 var a_7 = 0;
 var b_7 = 0;
-var c_7 = 0;
-var d_7 = 0;
-var e_7 = 0;
-var f_7 = 0;
-
-while(a_7*b_7+d_7*e_7 == 0 || a_7*c_7+d_7*f_7 ==0) {
-var a_7 = Math.floor(Math.random() * 3)+2;
-var b_7 = Math.floor(Math.random() * 3)+2;
-var c_7 = (Math.floor(Math.random() * 3)+2)*-1;
-var d_7 = (Math.floor(Math.random() * 3)+2)*-1;
-var e_7 = Math.floor(Math.random() * 3)+2;
-var f_7 = Math.floor(Math.random() * 3)+2;
+while(Math.abs(a_7) == Math.abs(b_7) || Math.abs(a_7) < 2 || b_7 ==0) {
+	//異なる二数
+	var a_7 = Math.floor(Math.random() * 11)-5;
+	var b_7 = Math.floor(Math.random() * 21)-10;
 }
 
+while(x1_7 == x2_7) {
+	//異なる二数
+	var x1_7 = Math.floor(Math.random() * 21)-10;
+	var x2_7 = Math.floor(Math.random() * 21)-10;
+}
+
+var y1_7 = a_7 * x1_7 + b_7;
+var y2_7 = a_7 * x2_7 + b_7;
+
 //問題文の作成7
-const q7 = a_7+"("+b_7+"<span class='literal'>a</span>"+c_7+")"+d_7+"("+e_7+"<span class='literal'>a</span>+"+f_7+")　<br>を計算しなさい";
+var q7 = "2点 A("+x1_7+", "+y1_7+"), B("+x2_7+", "+y2_7+")　<br>を通る直線ABの式を求めよ";
 
 //問題7の答え
-if ((a_7*c_7+d_7*f_7) < 0) {
-	ans7 = (a_7*b_7+d_7*e_7)+"a"+(a_7*c_7+d_7*f_7);
+if (b_7 < 0) {
+	ans7 = "y="+a_7+"x"+b_7;
 } else {
-	ans7 = (a_7*b_7+d_7*e_7)+"a+"+(a_7*c_7+d_7*f_7);
+	ans7 = "y="+a_7+"x+"+b_7;
 }
 
 
