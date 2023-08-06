@@ -1,0 +1,22 @@
+.tbl {
+	width: 100%;
+	text-align: center;
+	border-spacing: 3px;
+}
+
+.tbl th {
+	height: 1.5em;
+	text-align: center;
+	background-color: #5c726e;
+	color: white;
+}
+
+/*奇数行*/
+.tbl tr:nth-child(odd) {
+	background-color: white;
+}
+
+/*偶数行*/
+.tbl tr:nth-child(even) {
+	background-color: #f6f6f6;
+}
