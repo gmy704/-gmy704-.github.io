@@ -317,7 +317,7 @@ const result = document.querySelector(".result"); //結果
 var ur_ans = []; //あなたの答え
 var rw = []; //正否
 var score_check = 0; // 点数計算
-var allotments = [1, 1, 2, 2, 2, 2, 2, 3, 3, 2]; //配点
+var allotments = [2, 1, 2, 2, 2, 2, 1, 2, 3, 3]; //配点
 var score = 0; //点数
 
 //問題の表示
