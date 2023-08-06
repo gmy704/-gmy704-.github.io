@@ -432,7 +432,6 @@ var next = function() {
 			if(localStorage.hasOwnProperty("record")) {
 				var records = localStorage.getItem("record");
 				var scores = JSON.parse(records);
-				alert(scores);
 
 				var this_rec = {play_time: ymdhm, point: score};
 				var play_rec = [scores, this_rec];
