@@ -33,7 +33,7 @@ while (a_1 == b_1) {
 var q1 = "<span class='literal'>x</span> ="+x_1+", <span class='literal'>y</span> ="+y_1+"　<br>の時、次の式の値を求めなさい。<br>"+a_1+"<span class='literal'>x</span>"+b_1+"<span class='literal'>y</span>";
 
 //問題1の答え
-const ans1 = a_1*x_1 - b_1*y_1;
+const ans1 = a_1*x_1 + b_1*y_1;
 
 //問題2
 var a_2 = 0;
@@ -41,7 +41,7 @@ var b_2 = 0;
 var c_2 = 0;
 var d_2 = 0;
 
-while(a_2 == 0 || d_2 == 0 ) {
+while(Math.abs(a_2) < 2 || d_2 == 0 ) {
 	//二数
 	var a_2 = Math.floor(Math.random() * 19)-9;
 	var d_2 = Math.floor(Math.random() * 19)-9;
@@ -63,9 +63,11 @@ if (c_2 < 0 && d_2 < 0) {
 
 //問題2の答え
 if ((a_2 * c_2) < 0 && (a_2 * d_2) < 0) {
-	ans2 = a_2 * b_2 +"x"+ a_2 * c_2 +"y"+ a_2 * d_2;
+	ans2 = a_2 * b_2 +"x"+ (a_2*c_2) +"y"+ a_2 * d_2;
 } else if ((a_2 * c_2) > 0 && (a_2 * d_2) < 0) {
 	ans2 = a_2 * b_2 +"x+"+ a_2 * c_2 +"y"+ a_2 * d_2;
+} else if ((a_2 * c_2) < 0 && (a_2 * d_2) > 0) {
+	ans2 = a_2 * b_2 +"x"+ a_2 * c_2 +"y+"+ a_2 * d_2;
 } else {
 	ans2 = a_2 * b_2 +"x+"+ a_2 * c_2 +"y+"+ a_2 * d_2;
 }
@@ -366,6 +368,30 @@ var next = function() {
 				} else {}
 				score_check++;
 			}
+
+			var now = new Date();
+			var Year = now.getFullYear();
+			var Month = now.getMonth()+1;
+			var Day = now.getDate();
+			var Hour = now.getHours();
+			var Min = now.getMinutes();
+			var ymdhm = Year + "年" + Month + "月" + Day + "日" + Hour + "時" + Min + "分";
+
+			if(localStorage.hasOwnProperty("record")) {
+				var records = localStorage.getItem("record");
+				var scores = JSON.parse(records);
+
+				var this_rec = {play_time: ymdhm, point: score};
+				var play_rec = [scores, this_rec];
+				var play_rec = JSON.stringify(play_rec);
+				localStorage.setItem("record", play_rec);
+			} else {
+				var this_rec = {play_time: ymdhm, point: score};
+				var play_rec = [this_rec];
+				var play_rec = JSON.stringify(play_rec);
+				localStorage.setItem("record", play_rec);
+			}
+
 
 			document.getElementsByClassName("total")[0].innerHTML = "<h2>スコア　"+ score +"</h2><br>正解数："+right+"<br>時　間："+time;
 
