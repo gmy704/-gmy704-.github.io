@@ -195,71 +195,71 @@ if (b_7 < 0) {
 
 
 //問題8
-var a_8 = 0;
-var b_8 = 0;
-var c_8 = 0;
-var ans8 = 0;
+var arr8 = [Math.floor(Math.random() * 31), Math.floor(Math.random() * 31), Math.floor(Math.random() * 31), Math.floor(Math.random() * 31), Math.floor(Math.random() * 31), Math.floor(Math.random() * 31), Math.floor(Math.random() * 31), Math.floor(Math.random() * 31)];
 
-while (ans8 == 0 || b_8 == 0) {
-	var ans8 = Math.floor(Math.random() * 19)-9;
-	var b_8 = Math.floor(Math.random() * 19)-9;
+//配列シャッフル
+function mix(array) {
+	for(let i = (array.length - 1); 0 < i; i--){
+		let r = Math.floor(Math.random() * (i + 1));
+		let tmp = array[i];
+		array[i] = array[r];
+		array[r] = tmp;
+	}
+	return array;
 }
 
-while (Math.abs(a_8) == Math.abs(c_8) || (a_8-c_8)*ans8+b_8 == 0) {
-	var a_8 = Math.floor(Math.random() * 8)+2;
-	var c_8 = Math.floor(Math.random() * 8)+2;
-}
 
-const d_8 = (a_8-c_8)*ans8+b_8;
+var arr_sort8 = arr8; //配列の複製
+
+arr_sort8.sort(function (a,b) {
+	return a-b;
+});
+
+var n_8 = arr_sort8[3];
+var m_8 = arr_sort8[4];
 
 //問題文の作成8
-if (b_8 < 0 && d_8 < 0) {
-	q8 = "<span class='literal'>x</span>に当てはまる数を答えなさい。<br>"+a_8+"<span class='literal'>x</span>"+b_8+"="+c_8+"<span class='literal'>x</span>"+d_8;
-} else if (b_8 < 0 && d_8 > 0) {
-	q8 = "<span class='literal'>x</span>に当てはまる数を答えなさい。<br>"+a_8+"<span class='literal'>x</span>"+b_8+"="+c_8+"<span class='literal'>x</span>+"+d_8;
-} else if (b_8 > 0 && d_8 < 0) {
-	q8 = "<span class='literal'>x</span>に当てはまる数を答えなさい。<br>"+a_8+"<span class='literal'>x</span>+"+b_8+"="+c_8+"<span class='literal'>x</span>"+d_8;
-} else {
-	q8 = "<span class='literal'>x</span>に当てはまる数を答えなさい。<br>"+a_8+"<span class='literal'>x</span>+"+b_8+"="+c_8+"<span class='literal'>x</span>+"+d_8;
-}
+var q8 = "次のデータの中央値を求めよ　<br>"+mix(arr8);
+
+//問題8の答え
+var ans8 = (n_8 + m_8)/2;
 
 
 //問題9
-var a_9 = 0;
-var b_9 = 0;
-var ans9 = 0;
+var arr9 = [Math.floor(Math.random() * 31), Math.floor(Math.random() * 31), Math.floor(Math.random() * 31), Math.floor(Math.random() * 31), Math.floor(Math.random() * 31), Math.floor(Math.random() * 31), Math.floor(Math.random() * 31)];
 
-while (Math.abs(a_9) < 2) {
-	var a_9 = Math.floor(Math.random() * 7)-3;
-}
+var arr_sort9 = arr9; //配列の複製
 
-while (b_9 == 0 || ans9 == 0) {
-	var b_9 = Math.floor(Math.random() * 19)-9;
-	var ans9 = Math.floor(Math.random() * 19)-9;
-}
+arr_sort9.sort(function (a,b) {
+	return a-b;
+});
 
-const c_9 = (a_9 -1)*ans9 + a_9*b_9;
+var ans9 = arr_sort9[1];
 
 //問題文の作成9
-if (b_9 < 0 && c_9 < 0) {
-	q9 = "<span class='literal'>x</span>に当てはまる数を答えなさい。<br>"+a_9+"(<span class='literal'>x</span>"+b_9+")=<span class='literal'>x</span>"+c_9;
-} else if (b_9 > 0 && c_9 < 0) {
-	q9 = "<span class='literal'>x</span>に当てはまる数を答えなさい。<br>"+a_9+"(<span class='literal'>x</span>+"+b_9+")=<span class='literal'>x</span>"+c_9;
-} else {
-	q9 = "<span class='literal'>x</span>に当てはまる数を答えなさい。<br>"+a_9+"(<span class='literal'>x</span>+"+b_9+")=<span class='literal'>x</span>+"+c_9;
-}
+var q9 = "次のデータの第1四分位数を求めよ　<br>"+mix(arr9);
 
 
 //問題10
-while (a_10 == ans10) {
-	var a_10 = Math.floor(Math.random() *9)+1;
-	var ans10 = Math.floor(Math.random() *9)+1;
-}
+var arr10 = [Math.floor(Math.random() * 31), Math.floor(Math.random() * 31), Math.floor(Math.random() * 31), Math.floor(Math.random() * 31), Math.floor(Math.random() * 31), Math.floor(Math.random() * 31), Math.floor(Math.random() * 31), Math.floor(Math.random() * 31)];
 
-var b_10 = (Math.floor(Math.random() *5)+5)/2;
+var arr_sort10 = arr10; //配列の複製
+
+arr_sort10.sort(function (a,b) {
+	return a-b;
+});
+
+var a_10 = arr_sort10[1];
+var b_10 = arr_sort10[2];
+var c_10 = arr_sort10[5];
+var d_10 = arr_sort10[6];
 
 //問題文の作成10
-const q10 = "<span class='literal'>x</span>に当てはまる数を答えなさい。<br>"+a_10+":<span class='literal'>x</span>="+(a_10*b_10)+":"+(ans10*b_10);
+var q10 = "次のデータの四分位範囲を求めよ　<br>"+mix(arr10);
+
+//問題10の答え
+var ans10 = (c_10+d_10)/2 - (a_10+b_10)/2;
+
 
 //全問題
 const quiz = [
