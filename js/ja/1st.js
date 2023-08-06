@@ -160,7 +160,7 @@ if (a_5 < 0) {
 }
 
 //問題5の答え
-const ans5 = a_5**2;
+var ans5 = a_5**2;
 
 
 //問題6
@@ -419,6 +419,30 @@ var next = function() {
 					score += Math.floor((t_per_q[score_check] *10 - allotments[score_check] * 6 + allotments[score_check]) *6) ;
 				} else {}
 				score_check++;
+			}
+
+			var now = new Date();
+			var Year = now.getFullYear();
+			var Month = now.getMonth()+1;
+			var Day = now.getDate();
+			var Hour = now.getHours();
+			var Min = now.getMinutes();
+			var ymdhm = Year + "年" + Month + "月" + Day + "日" + Hour + "時" + Min + "分";
+
+			if(localStorage.hasOwnProperty("record")) {
+				var records = localStorage.getItem("record");
+				var scores = JSON.parse(records);
+				alert(scores);
+
+				var this_rec = {play_time: ymdhm, point: score};
+				var play_rec = [scores, this_rec];
+				var play_rec = JSON.stringify(play_rec);
+				localStorage.setItem("record", play_rec);
+			} else {
+				var this_rec = {play_time: ymdhm, point: score};
+				var play_rec = [this_rec];
+				var play_rec = JSON.stringify(play_rec);
+				localStorage.setItem("record", play_rec);
 			}
 
 			document.getElementsByClassName("total")[0].innerHTML = "<h2>スコア　"+ score +"</h2><br>正解数："+right+"<br>時　間："+time;
