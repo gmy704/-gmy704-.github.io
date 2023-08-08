@@ -416,7 +416,10 @@ var next = function() {
 
 			while (score_check < 10) {
 				if (rw[score_check] == "O") {
-					score += Math.floor((t_per_q[score_check] *10 - allotments[score_check] * 6 + allotments[score_check]) *6) ;
+					var this_score = Math.floor((allotments[score_check] * 1650 - t_per_q[score_check]) * 1.2);
+					if (this_score > 0) {
+						score += this_score;
+					} else {}
 				} else {}
 				score_check++;
 			}
@@ -431,12 +434,14 @@ var next = function() {
 
 			if(localStorage.hasOwnProperty("record")) {
 				var records = localStorage.getItem("record");
-				var scores = JSON.parse(records);
+				var scores = JSON.parse(records); //過去のスコアと時間を取得
 
-				var this_rec = {play_time: ymdhm, point: score};
+				var this_rec = {play_time: ymdhm, point: score}; //スコアと時間の記録
 				var play_rec = [scores, this_rec];
 				var play_rec = JSON.stringify(play_rec);
-				localStorage.setItem("record", play_rec);
+				localStorage.setItem("record", play_rec); //スコアの記録を残す
+
+
 			} else {
 				var this_rec = {play_time: ymdhm, point: score};
 				var play_rec = [this_rec];
