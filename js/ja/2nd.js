@@ -364,7 +364,10 @@ var next = function() {
 
 			while (score_check < 10) {
 				if (rw[score_check] == "O") {
-					score += Math.floor((t_per_q[score_check] *10 - allotments[score_check] * 6 + allotments[score_check]) *7) ;
+					var this_score = Math.floor((allotments[score_check] * 1650 - t_per_q[score_check]) * 1.1);
+					if (this_score > 0) {
+						score += this_score;
+					} else {}
 				} else {}
 				score_check++;
 			}
