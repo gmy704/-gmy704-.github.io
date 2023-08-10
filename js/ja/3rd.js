@@ -164,7 +164,7 @@ if (sign5 < 1) {
 var q5 = "A="+b_5+"&radic;"+a_5+", B="+c_5+"　の時、<br>大きいのはAとBのどちらか";
 
 //問題5の答え
-if (b_5 < c_5) {
+if ((b_5 * Math.sqrt(a_5)) < c_5) {
 	ans5 = "B";
 } else {
 	ans5 = "A";
