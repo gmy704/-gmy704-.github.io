@@ -130,7 +130,7 @@ if (c_3 < 0 && d_3 < 0) {
 var a_4 = Math.floor(Math.random() * 6) +11;
 
 //問題文の作成4
-var q4 = a_4**2/100 +"の平方根は、<span class='literal'>&plusmn; x</span>である。<br><span class='literal'>x</span>に当てはまる数を書きなさい";
+var q4 = a_4**2/100 +"の平方根は、<span class='literal'>&plusmn; x</span>である。<br><span class='literal'>x</span>に当てはまる正の数を書きなさい";
 
 //問題4の答え
 var ans4_1 = a_4/10;
