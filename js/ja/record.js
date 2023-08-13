@@ -28,9 +28,7 @@ function savepic(dataurl) {
 
 var capture = document.getElementById("capture");
 capture.addEventListener("click", function(){
-	html2canvas(document.getElementById("recording"), {
-		width: 1200
-	}).then(function(canvas) {
+	html2canvas(document.getElementById("recording")).then(function(canvas) {
 		savepic(canvas.toDataURL());
 	});
 });
