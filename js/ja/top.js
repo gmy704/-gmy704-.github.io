@@ -3,4 +3,6 @@ if (localStorage.hasOwnProperty("update")) {
 	localStorage.removeItem("record");
 	localStorage.setItem("update", "1");
 }
-else {}
+else {
+	localStorage.setItem("update", "1");
+}
