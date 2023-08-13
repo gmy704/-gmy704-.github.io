@@ -20,3 +20,19 @@
 .tbl tr:nth-child(even) {
 	background-color: #f6f6f6;
 }
+
+div {
+	margin-top: 32px;
+}
+
+div a {
+	background: #65564d;
+	border-radius: 50px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: 0 auto;
+	max-width: 260px;
+	padding: 10px 25px;
+	color: #f0faf8;
+}
