@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+        <title>ログイン画面っぽいやつ</title>
+</head>
+<body>
+<h2>アカウント作成画面のイメージ</h2>
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="poYoKKp" data-user="zbjgkvmt-the-selector" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/zbjgkvmt-the-selector/pen/poYoKKp">
+  Untitled</a> by Aya S (<a href="https://codepen.io/zbjgkvmt-the-selector">@zbjgkvmt-the-selector</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<h2>ログイン画面のイメージ</h2>
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="qBvBKLz" data-user="zbjgkvmt-the-selector" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/zbjgkvmt-the-selector/pen/qBvBKLz">
+  Untitled</a> by Aya S (<a href="https://codepen.io/zbjgkvmt-the-selector">@zbjgkvmt-the-selector</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+<h2>解説？</h2>
+<p>
+と言いつつも、私の説明は日本語がJapaneseじゃないので、わからないタグとかはググった方が感動的だと思います。
+</p>
+<p>
+どれがどれを意味するかは、上の怪しげなやつに書いてあります。<br>
+コメントアウトというのがあって、注釈みたいに、「これはコードじゃないよ」って言いながらメモができます。<br>
+＜！－－ －－＞ってやつは、htmlのコメントアウト（半角で書いたらコメントアウトになっちゃいました。そりゃそうだ。）<br>
+/**/は、cssとかJavaScriptのコメントアウト<br>
+//　は、JavaScriptで1行だけコメントアウトするやつです。<br>
+プログラムくんは、コメントアウトの中身は無視してくれるので、メモしたいならおすすめです。<br>
+</p>
+<p>localStorageは、模型として作るならめっちゃ便利な機能です。サーバーとかいらないし、タブ閉じてもデータ保存できるし。<br>でも、他の端末とか、他のブラウザ（ゲストモードで保存してもデータは消えるよ）とはデータ共有ができないので注意。<br>あとは、セキュリティ的には問題ありありありだから、模型じゃなくてガチるなら、使わないのが推奨です。</p>
+localStorageはJavaScriptで使うやつです。localStorage.setItem("key", 値)で、keyの場所に値を保存します。<br>
+localStorage.getItem("key")で、keyの値を取得します。<br>
+localStorage.hasOwnProperty("key")で、keyが存在するかを確かめます。（正確には、存在する時に「true」となります）
+localStorage.removeItem("key")で、そのkeyを削除します。
+</p>
+<p>
+HTMLのinputから値を取得するときは、valueを使います。<br>
+document.getElementById("inputのid名").value　で、書かれた値を意味します。<br>
+document.getElementById("id名")でhtmlのidを取得できます。これを変数におくこともできます。
+</p>
+<p>
+JavaScriptで文字を書くなら、innerHTML　が私は一番好きです。<br>
+document.getElementById("inputのid名").innerHTML = "文字"<br>
+で入力できます。document.write()より長いけど、document.writeより優秀だと思います。document.writeはいろいろ問題あるし…。<br>
+もちろん、innerHTMLで値を取得することもできます。でも、その場合はタグごと取得されるので、textContentとかの方が使いやすいかなって感じです。<br>
+innerHTMLは、htmlのタグを認識します。innerHTML = "＜strong＞ヌメラ＜/strong＞"ってやったら、ヌメラが太字になります。逆に、innerHTMLで要素を取得すると、タグごと取得します。<br>
+textContentは、文字として認識します。＜strong＞とかも、そのまま表示されます。逆に、textContentで要素を取得すると、文字だけ取得します。
+</p>
+<p>他にわからないところあったら、私かgoogle先生にお願いします。</p>
+</body>
+</html>
